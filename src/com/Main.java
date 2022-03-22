@@ -45,7 +45,6 @@ public class Main {
                 "\tб) сумму кубов всех целых чисел от а до 50 (значение а вводится с клавиатуры; 0 ≤ a ≤ 50);\n"+
                 "\tв) сумму кубов всех целых чисел от 1 до n (значение n вводится с клавиатуры; 1 ≤ n ≤ 100);\n"+
                 "\tг) сумму кубов всех целых чисел от а до b (значения а и b вводятся с клавиатуры; b ≥ а).");
-        Random random = new Random();
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("\nA)");
@@ -129,11 +128,41 @@ public class Main {
         System.out.println("\nAnswer: "+sum);
     }
 
+    /**
+     * В области 10 районов.
+     * Заданы площади, засеваемые пшеницей (в гектарах), и средняя урожайность (в центнерах с гектара) в каждом районе.
+     * Определить количество пшеницы, собранное в области, и среднюю урожайность по области.
+     */
+    private static void task100(){
+
+        System.out.println("\nTask 100:\nВ области 10 районов.\nЗаданы площади, засеваемые пшеницей (в гектарах), и средняя урожайность (в центнерах с гектара) в каждом районе.\nОпределить количество пшеницы, собранное в области, и среднюю урожайность по области.");
+
+        Random random = new Random();
+        Scanner scanner = new Scanner(System.in);
+
+        int global_s=0;
+        int k_u=0;
+
+        for(int i=1,s,u; i<11;i++){
+            s = random.nextInt(10)+1; //random number(1..10)
+            System.out.println("\nПоле "+i+"-го района имеет площадь: "+s+"га");
+            u = random.nextInt(10)+40; //random number(40..50)
+            System.out.println("C поля "+i+"-го района получили: "+u+"ц/га = "+u*s+"ц");
+
+            k_u=k_u+u*s;
+            global_s=global_s+s;
+
+        }
+        System.out.println("\nВсего уражая получили: "+k_u+" \nСредняя урожайность полей: "+ k_u/global_s+"ц");
+    }
+
 
     public static void main(String[] args) {
 	    Start();
         task25();
         task50();
         task75();
+        task100();
+
     }
 }
