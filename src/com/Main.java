@@ -114,10 +114,19 @@ public class Main {
     }
 
     /**
-     * Вычислить сумму: √(1+√(1+√(3+...+√(50))))..
+     * Вычислить сумму: √(1+√(2+√(3+...+√(50)))).
      */
     private static void task75(){
-        System.out.println("\n\nTask 75:");
+
+        System.out.println("\nTask 75:\nВычислить сумму: √(1+√(2+√(3+...+√(50)))).");
+        double sum=0;
+
+        for (int i=1; i<51;i++){
+            sum=sum+Math.sqrt(i);
+            //System.out.println(Math.sqrt(i)+" ");
+        }
+
+        System.out.println("\nAnswer: "+sum);
     }
 
 
@@ -125,5 +134,6 @@ public class Main {
 	    Start();
         task25();
         task50();
+        task75();
     }
 }
