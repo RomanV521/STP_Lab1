@@ -25,8 +25,8 @@ public class Main {
         number = random.nextInt(10); //random number(0..9)
         System.out.println("\nn:"+number);
 
-        for(int i=0; i<number; i++){
-            sum=sum+Math.pow(-1,i)*(1/Math.pow((2),i));
+        for(int i=0; i<=number; i++){
+            sum=sum+Math.pow(-1,i)*(1/Math.pow(2,i));
         }
 
         System.out.println("\nAnswer: "+sum);
@@ -51,7 +51,7 @@ public class Main {
         double sum=0;
 
         for(int i=20; i<=40; i++){
-            sum=sum+Math.pow(i,3);
+            sum+=Math.pow(i,3);
         }
         System.out.println("Answer: "+sum);
 
@@ -118,10 +118,11 @@ public class Main {
     private static void task75(){
 
         System.out.println("\nTask 75:\nВычислить сумму: √(1+√(2+√(3+...+√(50)))).");
-        double sum=0;
+        double sum=Math.sqrt(50);
 
-        for (int i=1; i<51;i++){
-            sum=sum+Math.sqrt(i);
+        for (int i=49; i>=1;i--){
+            //todo corect form.
+            sum+=Math.sqrt(i+sum);
             //System.out.println(Math.sqrt(i)+" ");
         }
 
@@ -153,7 +154,7 @@ public class Main {
             global_s=global_s+s;
 
         }
-        System.out.println("\nВсего уражая получили: "+k_u+" \nСредняя урожайность полей: "+ k_u/global_s+"ц");
+        System.out.println("\nВсего урожая получили: "+k_u+" \nСредняя урожайность полей: "+ k_u/global_s+"ц");
     }
 
     /**
@@ -178,11 +179,11 @@ public class Main {
 
     public static void main(String[] args) {
 	    Start();
-        task25();
-        task50();
+//        task25();
+//        task50();
         task75();
-        task100();
-        task125();
+//        task100();
+//        task125();
 
     }
 }
